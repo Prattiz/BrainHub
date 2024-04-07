@@ -1,5 +1,6 @@
 import { expect, test } from "vitest";
-import { AnswerQuestionUseCase } from "../src/domain/use-cases/answer-question";
+
+import { AnswerQuestionUseCase } from "@/domain/use-cases/answer-question";
 
 test('create an answer', () => {
 
