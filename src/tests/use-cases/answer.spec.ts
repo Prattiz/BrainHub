@@ -1,23 +1,30 @@
-import { expect, test } from "vitest";
+import { AnswerQuestionUseCase } from '@/domain/forum/aplication/use-cases/answer-question';
+import { InMemoryAnswerRepos } from '@/config-tests/InMemory-Repository/answer-repos';
 
-import { AnswerQuestionUseCase } from "@/domain/forum/aplication/use-cases/answer-question";
-import { AnswerRepos } from "@/domain/forum/aplication/respository/answer-repository";
-import { Answer } from "@/domain/forum/enterprise/entities/answer";
+import { beforeEach, describe, expect, it } from 'vitest';
 
-const fakeAnswersRepository: AnswerRepos = {
-    create: async (answer: Answer) => {},
-}
 
-test('create an answer', async () => {
+let inMemoryAnswerRepos: InMemoryAnswerRepos;
+let sut: AnswerQuestionUseCase
 
-  const answerQuestion = new AnswerQuestionUseCase(fakeAnswersRepository)
+describe('create a answer', async () => {
 
-  const answer = await answerQuestion.execute({
+  beforeEach(() => {
+    inMemoryAnswerRepos = new InMemoryAnswerRepos();
+    sut = new AnswerQuestionUseCase(inMemoryAnswerRepos)
 
-    questionId: '1',
-    instructorId: '1',
-    content: 'the answer',
+  });
+
+
+  it('should be able to create a answer', async () => {
+
+    const answer = await sut.execute({
+
+      instructorId: '1',
+      questionId: '1',
+      content: 'the answer',
+    });
+
+    expect(answer.content).toEqual('the answer')
   })
-
-  expect(answer.content).toEqual('the answer')
 })

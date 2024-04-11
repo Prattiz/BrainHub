@@ -1,23 +1,30 @@
 import { CreateQuestionUseCase } from '@/domain/forum/aplication/use-cases/create-question';
-import { QuestionRepos } from '@/domain/forum/aplication/respository/question-repository';
-import { Question } from '@/domain/forum/enterprise/entities/question';
+import { InMemoryQuestionRepos } from '@/config-tests/InMemory-Repository/question-repos';
 
-import { expect, test } from 'vitest';
+import { beforeEach, describe, expect, it } from 'vitest';
 
-const fakeQuestionsRepository: QuestionRepos = {
-  create: async (question: Question) => {},
-}
 
-test('create a question', async () => {
+let inMemoryQuestionRepos: InMemoryQuestionRepos;
+let sut: CreateQuestionUseCase
 
-  const createQuestion = new CreateQuestionUseCase(fakeQuestionsRepository)
+describe('create a question', async () => {
 
-  const { question } = await createQuestion.execute({
+  beforeEach(() => {
+    inMemoryQuestionRepos = new InMemoryQuestionRepos();
+    sut = new CreateQuestionUseCase(inMemoryQuestionRepos)
 
-    authorId: '1',
-    title: 'new question',
-    content: 'Content',
+  });
+
+
+  it('should be able to create a question', async () => {
+
+    const { question } = await sut.execute({
+
+      authorId: '1',
+      title: 'new question',
+      content: 'Content',
+    });
+
+    expect(question.ID).toBeTruthy()
   })
-
-  expect(question.ID).toBeTruthy()
 })
