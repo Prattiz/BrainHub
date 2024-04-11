@@ -15,12 +15,12 @@ export class InMemoryQuestionRepos implements QuestionRepos {
         return question
     }
 
+
     async delete(question: Question){
         const itemIndex = this.items.findIndex((item) => item.ID === question.ID)
 
         this.items.splice(itemIndex, 1)
     }
-    
     
 
     async findBySlug(slug: string){
@@ -31,7 +31,6 @@ export class InMemoryQuestionRepos implements QuestionRepos {
 
         return question
     }
-
 
 
     async create(question: Question) {
