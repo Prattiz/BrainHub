@@ -5,7 +5,7 @@ import { Optional } from "@/core/entities/optional";
 
 import dayjs from "dayjs";
 
-interface QuestionProps{
+export interface QuestionProps{
 
     slug: Slug;     
     title: string;
