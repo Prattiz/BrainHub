@@ -9,9 +9,6 @@ interface AnswerQuestionRequest{
     content: string,
 }
 
-interface AnswerQuestionResponse{
-    
-}
 
 export class AnswerQuestionUseCase{
     
