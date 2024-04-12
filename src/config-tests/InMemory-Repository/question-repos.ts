@@ -6,7 +6,8 @@ export class InMemoryQuestionRepos implements QuestionRepos {
     public items: Question[] = [];
 
     async findById(id: string) {
-        const question = this.items.find((item) => item.ID.toString() === id)
+
+        const question = this.items.find((item) => item.ID.toString() === id);
     
         if (!question) {
           return null
@@ -17,9 +18,18 @@ export class InMemoryQuestionRepos implements QuestionRepos {
 
 
     async delete(question: Question){
-        const itemIndex = this.items.findIndex((item) => item.ID === question.ID)
+
+        const itemIndex = this.items.findIndex((item) => item.ID === question.ID);
 
         this.items.splice(itemIndex, 1)
+    }
+
+
+    async save(question: Question){
+
+        const itemIndex = this.items.findIndex((item) => item.ID === question.ID);
+
+        this.items[itemIndex] = question
     }
     
 
