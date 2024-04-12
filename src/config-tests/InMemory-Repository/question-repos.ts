@@ -1,3 +1,4 @@
+import { PaginationParams } from "@/core/repository/pagination-params";
 import { QuestionRepos } from "@/domain/forum/aplication/respository/question-repository";
 import { Question } from "@/domain/forum/enterprise/entities/question";
 
@@ -22,6 +23,16 @@ export class InMemoryQuestionRepos implements QuestionRepos {
         const itemIndex = this.items.findIndex((item) => item.ID === question.ID);
 
         this.items.splice(itemIndex, 1)
+    }
+
+
+    async findManyRecent({ page }: PaginationParams) {
+        
+        const questions = this.items
+          .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
+          .slice((page - 1) * 20, page * 20)
+    
+        return questions
     }
 
 

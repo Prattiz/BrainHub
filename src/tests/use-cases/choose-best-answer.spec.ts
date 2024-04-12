@@ -13,6 +13,7 @@ let inMemoryAnswersRepository: InMemoryAnswerRepos
 let sut: ChooseBestAnswerUseCase
 
 describe('Choose Question Best Answer', () => {
+    
   beforeEach(() => {
     inMemoryQuestionsRepository = new InMemoryQuestionRepos()
     inMemoryAnswersRepository = new InMemoryAnswerRepos()
@@ -62,5 +63,5 @@ describe('Choose Question Best Answer', () => {
     }).rejects.toBeInstanceOf(Error)
 
   });
-  
+
 })
