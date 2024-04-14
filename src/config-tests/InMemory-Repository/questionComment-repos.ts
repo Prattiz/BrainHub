@@ -1,3 +1,4 @@
+import { PaginationParams } from "@/core/repository/pagination-params";
 import { QuestionCommentsRepos } from "@/domain/forum/aplication/respository/questionComment-repository";
 import { QuestionComment } from "@/domain/forum/enterprise/entities/question-comment";
 
@@ -11,7 +12,6 @@ export class InMemoryQuestionCommentsRepos implements QuestionCommentsRepos {
     this.items.push(questionComment)
   }
 
-
   async findById(id: string) {
     const questionComment = this.items.find((item) => item.ID.toString() === id)
 
@@ -22,6 +22,13 @@ export class InMemoryQuestionCommentsRepos implements QuestionCommentsRepos {
     return questionComment
   }
 
+  async findManyByQuestionId(questionId: string, { page }: PaginationParams) {
+    const questionComments = this.items
+      .filter((item) => item.questionId.toString() === questionId)
+      .slice((page - 1) * 20, page * 20)
+
+    return questionComments
+  }
 
   async delete(questionComment: QuestionComment) {
     const itemIndex = this.items.findIndex(
