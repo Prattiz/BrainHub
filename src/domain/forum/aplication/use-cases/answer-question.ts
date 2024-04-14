@@ -1,4 +1,4 @@
-import { UniqueEntityID } from "@/core/entities/unique-entitie-id";
+import { UniqueEntityID } from "@/core/entities/unique-entity-id";
 import { Answer } from "../../enterprise/entities/answer";
 import { AnswerRepos } from "../respository/answer-repository";
 

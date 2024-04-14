@@ -1,7 +1,7 @@
 import { DeleteQuestionUseCase } from '@/domain/forum/aplication/use-cases/delete-question'
 import { InMemoryQuestionRepos } from '@/config-tests/InMemory-Repository/question-repos'
 import { makeQuestion } from '@/config-tests/factories/make-question'
-import { UniqueEntityID } from '@/core/entities/unique-entitie-id'
+import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 
 import { beforeEach, describe, expect, it } from 'vitest';
 

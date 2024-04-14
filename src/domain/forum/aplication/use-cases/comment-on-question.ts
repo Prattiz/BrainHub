@@ -2,7 +2,7 @@ import { QuestionComment } from "../../enterprise/entities/question-comment";
 import { QuestionRepos } from "../respository/question-repository";
 import { QuestionCommentsRepos } from "../respository/questionComment-repository";
 
-import { UniqueEntityID } from "@/core/entities/unique-entitie-id";
+import { UniqueEntityID } from "@/core/entities/unique-entity-id";
 
 
 interface CommentOnQuestionUseCaseRequest {

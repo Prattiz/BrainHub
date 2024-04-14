@@ -1,4 +1,4 @@
-import { UniqueEntityID } from '@/core/entities/unique-entitie-id'
+import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 import { Optional } from '@/core/entities/optional'
 import { Comment, CommentProps } from '../../../../core/entities/comment'
 

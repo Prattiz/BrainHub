@@ -1,7 +1,7 @@
 import { InMemoryAnswerRepos } from '@/config-tests/InMemory-Repository/answer-repos';
 import { FetchQuestionAnswersUseCase } from '@/domain/forum/aplication/use-cases/fetch-question-answers';
 import { makeAnswer } from '@/config-tests/factories/make-answer';
-import { UniqueEntityID } from '@/core/entities/unique-entitie-id';
+import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 
 import { beforeEach, describe, expect, it } from 'vitest';
 

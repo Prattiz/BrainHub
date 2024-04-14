@@ -1,5 +1,5 @@
 import { AnswerRepos } from '../respository/answer-repository';
-import { UniqueEntityID } from '@/core/entities/unique-entitie-id';
+import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 import { AnswerComment } from '@/domain/forum/enterprise/entities/answer-comment'
 import { AnswerCommentsRepos } from '../respository/answerComment-repository';
 
