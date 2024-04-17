@@ -31,9 +31,7 @@ describe('Comment on Question', () => {
       content: 'comment test',
     })
 
-    expect(inMemoryQuestionCommentsRepos.items[0].content).toEqual(
-      'comment test',
-    )
+    expect(inMemoryQuestionCommentsRepos.items[0].content).toEqual('comment test')
   });
 
 })

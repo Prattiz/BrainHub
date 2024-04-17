@@ -8,6 +8,7 @@ import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 
 
 import { beforeEach, describe, expect, it } from 'vitest';
+import { NotAllowedError } from '@/domain/forum/aplication/use-cases/errors/not-allowed-error';
 
 
 let inMemoryAnswerCommentsRepository: InMemoryAnswerCommentsRepos
@@ -44,12 +45,13 @@ describe('Delete Answer Comment', () => {
 
     await inMemoryAnswerCommentsRepository.create(answerComment)
 
-    expect(() => {
-      return sut.execute({
-        answerCommentId: answerComment.ID.toString(),
-        authorId: 'author-2',
-      })
-    }).rejects.toBeInstanceOf(Error)
+    const result = await sut.execute({
+      answerCommentId: answerComment.ID.toString(),
+      authorId: 'author-2',
+    })
+
+    expect(result.isLeft()).toBe(true)
+    expect(result.value).toBeInstanceOf(NotAllowedError)
   });
 
 })

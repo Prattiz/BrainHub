@@ -24,11 +24,11 @@ describe('get question by slug', async () => {
 
     await inMemoryQuestionRepos.create(newQuestion);
 
-    const { question } = await sut.execute({
+    const result = await sut.execute({
 
       slug: 'example-question'
     });
 
-    expect(question.ID).toBeTruthy()
+    expect(result.isRight()).toBeTruthy()
   })
 })

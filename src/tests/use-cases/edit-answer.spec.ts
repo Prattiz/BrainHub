@@ -7,6 +7,7 @@ import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 
 
 import { beforeEach, describe, expect, it } from 'vitest';
+import { NotAllowedError } from '@/domain/forum/aplication/use-cases/errors/not-allowed-error';
 
 
 let inMemoryAnswersRepository: InMemoryAnswerRepos
@@ -52,13 +53,14 @@ describe('Edit Answer', () => {
 
         await inMemoryAnswersRepository.create(newAnswer)
 
-        expect(() => {
-        return sut.execute({
+        const result = await sut.execute({
             answerId: newAnswer.ID.toValue(),
             authorId: 'author-2', 
             content: 'trying to edit...'
-        })
-        }).rejects.toBeInstanceOf(Error)
+        });
+
+        expect(result.isLeft()).toBe(true)
+        expect(result.value).toBeInstanceOf(NotAllowedError)
 
     });
 

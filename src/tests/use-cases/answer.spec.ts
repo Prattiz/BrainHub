@@ -25,6 +25,6 @@ describe('create a answer', async () => {
       content: 'the answer',
     });
 
-    expect(answer.content).toEqual('the answer')
+    expect(answer.value?.answer.content).toEqual("the answer")
   })
 })

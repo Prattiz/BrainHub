@@ -7,6 +7,7 @@ import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 
 
 import { beforeEach, describe, expect, it } from 'vitest';
+import { NotAllowedError } from '@/domain/forum/aplication/use-cases/errors/not-allowed-error';
 
 let inMemoryQuestionsRepository: InMemoryQuestionRepos
 let sut: EditQuestionUseCase
@@ -84,13 +85,14 @@ describe('Edit Question', () => {
 
         await inMemoryQuestionsRepository.create(newQuestion)
 
-        expect(() => {
-        return sut.execute({
+        const result = await sut.execute({
             questionId: newQuestion.ID.toValue(),
             authorId: 'author-2', // other user
             //....
         })
-        }).rejects.toBeInstanceOf(Error)
+
+        expect(result.isLeft()).toBe(true)
+        expect(result.value).toBeInstanceOf(NotAllowedError)
 
     });
 

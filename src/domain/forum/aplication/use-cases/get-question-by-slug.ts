@@ -1,5 +1,7 @@
+import { Either, left, right } from "@/core/either";
 import { Question } from "../../enterprise/entities/question";
 import { QuestionRepos } from "../respository/question-repository";
+import { ResourceNotFoundError } from "./errors/resource-not-found-error";
 
 
 interface GetQuestionBySlugRequest{
@@ -7,10 +9,8 @@ interface GetQuestionBySlugRequest{
     slug: string
 }
 
-interface GetQuestionBySlugResponse{
 
-    question: Question
-}
+type GetQuestionBySlugResponse = Either< ResourceNotFoundError, { question: Question } >
 
 export class GetQuestionBySlugUseCase{
 
@@ -22,10 +22,10 @@ export class GetQuestionBySlugUseCase{
 
 
         if(!question){
-            throw new Error('question not found...')
+            return left(new ResourceNotFoundError())
         }
 
 
-        return { question }
+        return right({ question })
     }
 }

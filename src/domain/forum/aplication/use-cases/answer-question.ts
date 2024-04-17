@@ -1,6 +1,7 @@
 import { UniqueEntityID } from "@/core/entities/unique-entity-id";
 import { Answer } from "../../enterprise/entities/answer";
 import { AnswerRepos } from "../respository/answer-repository";
+import { Either, right } from "@/core/either";
 
 interface AnswerQuestionRequest{
 
@@ -9,12 +10,13 @@ interface AnswerQuestionRequest{
     content: string,
 }
 
+type AnswerQuestionResponse = Either< null, { answer: Answer } >
 
 export class AnswerQuestionUseCase{
     
     constructor(private answersRepos: AnswerRepos){}
     
-    async execute({ instructorId, questionId, content }: AnswerQuestionRequest){
+    async execute({ instructorId, questionId, content }: AnswerQuestionRequest): Promise<AnswerQuestionResponse>{
 
         const answer = Answer.create({
 
@@ -25,6 +27,6 @@ export class AnswerQuestionUseCase{
 
         await this.answersRepos.create(answer)
 
-        return answer
+        return right({ answer })
     }
 }

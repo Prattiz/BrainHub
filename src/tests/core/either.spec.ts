@@ -1,12 +1,13 @@
-import { Either, left, right } from '@/core/either'
+import { Either, left, right } from '@/core/either';
+
+import { test, expect } from 'vitest';
+
 
 function doSomeThing(shouldSuccess: boolean): Either<string, number> {
 
-  if (shouldSuccess) {
-    return right(10)
-  } else {
-    return left('error')
-  }
+  if (shouldSuccess) { return right(10) }
+   else { return left('error') }
+   
 }
 
 test('success result', () => {
