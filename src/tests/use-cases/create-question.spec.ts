@@ -27,8 +27,14 @@ describe('create a question', async () => {
       attachmentIds: ['1', '2'],
     });
 
-    expect(inMemoryQuestionRepos.items[0].attachment).toHaveLength(2)
-    expect(inMemoryQuestionRepos.items[0].attachment).toEqual([
+    console.log(inMemoryQuestionRepos.items[0])
+
+    expect(result.isRight()).toBe(true)
+    expect(inMemoryQuestionRepos.items[0]).toEqual(result.value?.question) 
+
+    expect( inMemoryQuestionRepos.items[0].attachment.currentItems ).toHaveLength(2)
+
+    expect( inMemoryQuestionRepos.items[0].attachment.currentItems ).toEqual([
       expect.objectContaining({ attachmentId: new UniqueEntityID('1') }),
       expect.objectContaining({ attachmentId: new UniqueEntityID('2') }),
     ])
