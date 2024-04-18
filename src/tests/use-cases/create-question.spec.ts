@@ -2,6 +2,7 @@ import { CreateQuestionUseCase } from '@/domain/forum/aplication/use-cases/creat
 import { InMemoryQuestionRepos } from '@/config-tests/InMemory-Repository/question-repos';
 
 import { beforeEach, describe, expect, it } from 'vitest';
+import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 
 
 let inMemoryQuestionRepos: InMemoryQuestionRepos;
@@ -23,9 +24,15 @@ describe('create a question', async () => {
       authorId: '1',
       title: 'new question',
       content: 'Content',
+      attachmentIds: ['1', '2'],
     });
 
-    expect(result.isRight()).toBe(true)
-    expect(inMemoryQuestionRepos.items[0]).toEqual(result.value?.question)
-  })
+    expect(inMemoryQuestionRepos.items[0].attachment).toHaveLength(2)
+    expect(inMemoryQuestionRepos.items[0].attachment).toEqual([
+      expect.objectContaining({ attachmentId: new UniqueEntityID('1') }),
+      expect.objectContaining({ attachmentId: new UniqueEntityID('2') }),
+    ])
+
+  });
+
 })
