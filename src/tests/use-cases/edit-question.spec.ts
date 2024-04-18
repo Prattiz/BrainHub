@@ -6,7 +6,7 @@ import { makeQuestion } from '@/config-tests/factories/make-question';
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 
 
-import { beforeEach, describe, expect, it } from 'vitest';
+
 import { NotAllowedError } from '@/domain/forum/aplication/use-cases/errors/not-allowed-error';
 
 let inMemoryQuestionsRepository: InMemoryQuestionRepos

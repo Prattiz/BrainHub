@@ -3,7 +3,7 @@ import { makeQuestion } from '@/config-tests/factories/make-question';
 import { GetQuestionBySlugUseCase } from '@/domain/forum/aplication/use-cases/get-question-by-slug';
 import { Slug } from '@/domain/forum/enterprise/entities/value-objects/slug';
 
-import { beforeEach, describe, expect, it } from 'vitest';
+
 
 
 let inMemoryQuestionRepos: InMemoryQuestionRepos;

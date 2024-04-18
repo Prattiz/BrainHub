@@ -1,7 +1,6 @@
 import { AnswerQuestionUseCase } from '@/domain/forum/aplication/use-cases/answer-question';
 import { InMemoryAnswerRepos } from '@/config-tests/InMemory-Repository/answer-repos';
 
-import { beforeEach, describe, expect, it } from 'vitest';
 
 
 let inMemoryAnswerRepos: InMemoryAnswerRepos;

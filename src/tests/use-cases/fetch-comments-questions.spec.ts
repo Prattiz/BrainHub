@@ -3,7 +3,7 @@ import { InMemoryQuestionCommentsRepos } from '@/config-tests/InMemory-Repositor
 import { FetchQuestionCommentsUseCase } from '@/domain/forum/aplication/use-cases/fetch-comments-questions'
 import { makeQuestionComment } from '@/config-tests/factories/make-comment-question'
 
-import { beforeEach, describe, expect, it } from 'vitest';
+
 
 
 let inMemoryQuestionCommentsRepository: InMemoryQuestionCommentsRepos

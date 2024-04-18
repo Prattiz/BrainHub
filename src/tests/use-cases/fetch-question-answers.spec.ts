@@ -3,7 +3,7 @@ import { FetchQuestionAnswersUseCase } from '@/domain/forum/aplication/use-cases
 import { makeAnswer } from '@/config-tests/factories/make-answer';
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 
-import { beforeEach, describe, expect, it } from 'vitest';
+
 
 let inMemoryAnswersRepository: InMemoryAnswerRepos
 let sut: FetchQuestionAnswersUseCase

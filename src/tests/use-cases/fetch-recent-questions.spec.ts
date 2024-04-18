@@ -2,7 +2,7 @@ import { InMemoryQuestionRepos } from '@/config-tests/InMemory-Repository/questi
 import { makeQuestion } from '@/config-tests/factories/make-question';
 import { FetchRecentQuestionsUseCase } from '@/domain/forum/aplication/use-cases/fetch-recent-question';
 
-import { beforeEach, describe, expect, it } from 'vitest';
+
 
 
 let inMemoryQuestionsRepository: InMemoryQuestionRepos
