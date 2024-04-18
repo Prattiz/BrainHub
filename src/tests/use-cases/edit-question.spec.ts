@@ -57,10 +57,8 @@ describe('Edit Question', () => {
             authorId: 'author-1',
             title: 'question test',
             content: 'content test',
-            attachmentsIds: ['1', '2'],
+            attachmentsIds: ['1', '3'],
         })
-
-       console.log(inMemoryQuestionsRepository.items[0])
 
         
         expect( inMemoryQuestionsRepository.items[0].attachment.currentItems ).toHaveLength(2)

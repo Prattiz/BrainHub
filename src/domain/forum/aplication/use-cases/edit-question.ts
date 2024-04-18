@@ -55,12 +55,13 @@ export class EditQuestionUseCase{
             })
         })
     
+        questionAttachmentList.update(questionAttachments);
         
         if(title){ question.title = title };
         
         if(content){ question.content = content };
-        
-        questionAttachmentList.update(questionAttachments);
+
+        question.attachments = questionAttachmentList 
 
         await this.questionsRepository.save(question)
 
