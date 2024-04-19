@@ -1,4 +1,4 @@
-import { AnswerAttachmentsRepos } from '@/domain/forum/aplication/respository/answer-attachment-repository';
+import { AnswerAttachmentsRepos } from "@/domain/forum/application/respository/answer-attachment-repository";
 import { AnswerAttachment } from '@/domain/forum/enterprise/entities/answer-attachment';
 
 

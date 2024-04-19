@@ -1,9 +1,10 @@
-import { InMemoryAnswerRepos } from '@/config-tests/InMemory-Repository/answer-repos';
-import { InMemoryAnswerCommentsRepos } from '@/config-tests/InMemory-Repository/answerComment-repos';
+import { InMemoryAnswerRepos } from '@/config-tests/InMemory-Repository/forum/answer-repos';
+import { InMemoryAnswerCommentsRepos } from '@/config-tests/InMemory-Repository/forum/answerComment-repos';
 
-import { CommentOnAnswerUseCase } from '@/domain/forum/aplication/use-cases/comment-on-answer';
+import { CommentOnAnswerUseCase } from '@/domain/forum/application/use-cases/comment-on-answer';
 
 import { makeAnswer } from '@/config-tests/factories/make-answer';
+import { InMemoryAnswerAttachmentsRepos } from '@/config-tests/InMemory-Repository/forum/answer-attachment-repos';
 
 
 
@@ -12,12 +13,15 @@ import { makeAnswer } from '@/config-tests/factories/make-answer';
 
 let inMemoryAnswersRepository: InMemoryAnswerRepos
 let inMemoryAnswerCommentsRepository: InMemoryAnswerCommentsRepos
+let inMemoryAnswerAttachmentsRepository: InMemoryAnswerAttachmentsRepos
+
 let sut: CommentOnAnswerUseCase
 
 describe('Comment on Answer', () => {
 
   beforeEach(() => {
-    inMemoryAnswersRepository = new InMemoryAnswerRepos()
+    inMemoryAnswerAttachmentsRepository = new InMemoryAnswerAttachmentsRepos()
+    inMemoryAnswersRepository = new InMemoryAnswerRepos(inMemoryAnswerAttachmentsRepository)
     inMemoryAnswerCommentsRepository = new InMemoryAnswerCommentsRepos()
 
     sut = new CommentOnAnswerUseCase( inMemoryAnswersRepository, inMemoryAnswerCommentsRepository)

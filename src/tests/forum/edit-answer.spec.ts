@@ -1,14 +1,14 @@
-import { EditAnswerUseCase } from '@/domain/forum/aplication/use-cases/edit-answer';
+import { EditAnswerUseCase } from '@/domain/forum/application/use-cases/edit-answer';
 
-import { InMemoryAnswerRepos } from '@/config-tests/InMemory-Repository/answer-repos';
+import { InMemoryAnswerRepos } from '@/config-tests/InMemory-Repository/forum/answer-repos';
 import { makeAnswer } from '@/config-tests/factories/make-answer';
 
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 
 
 
-import { NotAllowedError } from '@/domain/forum/aplication/use-cases/errors/not-allowed-error';
-import { InMemoryAnswerAttachmentsRepos } from '@/config-tests/InMemory-Repository/answer-attachment-repos';
+import { NotAllowedError } from '@/domain/forum/application/use-cases/errors/not-allowed-error';
+import { InMemoryAnswerAttachmentsRepos } from '@/config-tests/InMemory-Repository/forum/answer-attachment-repos';
 import { makeAnswerAttachment } from '@/config-tests/factories/make-answer-attachment';
 
 

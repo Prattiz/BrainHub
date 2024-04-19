@@ -1,13 +1,13 @@
-import { EditQuestionUseCase } from '@/domain/forum/aplication/use-cases/edit-question';
+import { EditQuestionUseCase } from '@/domain/forum/application/use-cases/edit-question';
 
-import { InMemoryQuestionRepos } from '@/config-tests/InMemory-Repository/question-repos';
+import { InMemoryQuestionRepos } from '@/config-tests/InMemory-Repository/forum/question-repos';
 import { makeQuestion } from '@/config-tests/factories/make-question';
 
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 
-import { InMemoryQuestionAttachmentsRepos } from '@/config-tests/InMemory-Repository/question-attachment-repos';
+import { InMemoryQuestionAttachmentsRepos } from '@/config-tests/InMemory-Repository/forum/question-attachment-repos';
 
-import { NotAllowedError } from '@/domain/forum/aplication/use-cases/errors/not-allowed-error';
+import { NotAllowedError } from '@/domain/forum/application/use-cases/errors/not-allowed-error';
 import { makeQuestionAttachment } from '@/config-tests/factories/make-question-attachment';
 
 

@@ -1,6 +1,6 @@
-import { InMemoryAnswerCommentsRepos } from '@/config-tests/InMemory-Repository/answerComment-repos';
+import { InMemoryAnswerCommentsRepos } from '@/config-tests/InMemory-Repository/forum/answerComment-repos';
 
-import { DeleteAnswerCommentUseCase } from '@/domain/forum/aplication/use-cases/delete-comment-answer';
+import { DeleteAnswerCommentUseCase } from '@/domain/forum/application/use-cases/delete-comment-answer';
 
 import { makeAnswerComment } from '@/config-tests/factories/make-comment-answer';
 
@@ -8,7 +8,7 @@ import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 
 
 
-import { NotAllowedError } from '@/domain/forum/aplication/use-cases/errors/not-allowed-error';
+import { NotAllowedError } from '@/domain/forum/application/use-cases/errors/not-allowed-error';
 
 
 let inMemoryAnswerCommentsRepository: InMemoryAnswerCommentsRepos
@@ -17,6 +17,7 @@ let sut: DeleteAnswerCommentUseCase
 describe('Delete Answer Comment', () => {
 
   beforeEach(() => {
+    
     inMemoryAnswerCommentsRepository = new InMemoryAnswerCommentsRepos()
 
     sut = new DeleteAnswerCommentUseCase(inMemoryAnswerCommentsRepository)

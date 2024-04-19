@@ -1,6 +1,6 @@
 import { UniqueEntityID } from '@/core/entities/unique-entity-id'
-import { InMemoryAnswerCommentsRepos } from '@/config-tests/InMemory-Repository/answerComment-repos'
-import { FetchAnswerCommentsUseCase } from '@/domain/forum/aplication/use-cases/fetch-comments-answers'
+import { InMemoryAnswerCommentsRepos } from '@/config-tests/InMemory-Repository/forum/answerComment-repos'
+import { FetchAnswerCommentsUseCase } from '@/domain/forum/application/use-cases/fetch-comments-answers'
 import { makeAnswerComment } from '@/config-tests/factories/make-comment-answer'
 
 

@@ -1,19 +1,24 @@
-import { DeleteAnswerUseCase } from '@/domain/forum/aplication/use-cases/delete-answer'
-import { InMemoryAnswerRepos } from '@/config-tests/InMemory-Repository/answer-repos'
+import { DeleteAnswerUseCase } from '@/domain/forum/application/use-cases/delete-answer'
+import { InMemoryAnswerRepos } from '@/config-tests/InMemory-Repository/forum/answer-repos'
 import { makeAnswer } from '@/config-tests/factories/make-answer'
 import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 
 
-import { NotAllowedError } from '@/domain/forum/aplication/use-cases/errors/not-allowed-error';
+import { NotAllowedError } from '@/domain/forum/application/use-cases/errors/not-allowed-error';
+import { InMemoryAnswerAttachmentsRepos } from '@/config-tests/InMemory-Repository/forum/answer-attachment-repos';
 
 
 let inMemoryAnswersRepository: InMemoryAnswerRepos
+let inMemoryAnswerAttachmentsRepository: InMemoryAnswerAttachmentsRepos
+
 let sut: DeleteAnswerUseCase
 
 describe('Delete Answer', () => {
 
   beforeEach(() => {
-    inMemoryAnswersRepository = new InMemoryAnswerRepos()
+    
+    inMemoryAnswerAttachmentsRepository = new InMemoryAnswerAttachmentsRepos()
+    inMemoryAnswersRepository = new InMemoryAnswerRepos(inMemoryAnswerAttachmentsRepository)
     sut = new DeleteAnswerUseCase(inMemoryAnswersRepository)
   });
 

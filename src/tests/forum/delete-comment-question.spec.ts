@@ -1,6 +1,6 @@
-import { InMemoryQuestionCommentsRepos } from '@/config-tests/InMemory-Repository/questionComment-repos';
+import { InMemoryQuestionCommentsRepos } from '@/config-tests/InMemory-Repository/forum/questionComment-repos';
 
-import { DeleteQuestionCommentUseCase } from '@/domain/forum/aplication/use-cases/delete-comment-question';
+import { DeleteQuestionCommentUseCase } from '@/domain/forum/application/use-cases/delete-comment-question';
 
 import { makeQuestionComment } from '@/config-tests/factories/make-comment-question';
 
@@ -8,7 +8,7 @@ import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 
 
 
-import { NotAllowedError } from '@/domain/forum/aplication/use-cases/errors/not-allowed-error';
+import { NotAllowedError } from '@/domain/forum/application/use-cases/errors/not-allowed-error';
 
 
 let inMemoryQuestionCommentsRepository: InMemoryQuestionCommentsRepos
@@ -25,6 +25,7 @@ describe('Delete Question Comment', () => {
 
 
   it('should be able to delete a question comment', async () => {
+    
     const questionComment = makeQuestionComment()
 
     await inMemoryQuestionCommentsRepository.create(questionComment)

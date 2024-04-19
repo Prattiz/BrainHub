@@ -1,9 +1,9 @@
-import { CreateQuestionUseCase } from '@/domain/forum/aplication/use-cases/create-question';
-import { InMemoryQuestionRepos } from '@/config-tests/InMemory-Repository/question-repos';
+import { CreateQuestionUseCase } from '@/domain/forum/application/use-cases/create-question';
+import { InMemoryQuestionRepos } from '@/config-tests/InMemory-Repository/forum/question-repos';
 
 
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
-import { InMemoryQuestionAttachmentsRepos } from '@/config-tests/InMemory-Repository/question-attachment-repos';
+import { InMemoryQuestionAttachmentsRepos } from '@/config-tests/InMemory-Repository/forum/question-attachment-repos';
 
 
 let inMemoryQuestionRepository: InMemoryQuestionRepos

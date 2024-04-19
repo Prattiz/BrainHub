@@ -1,6 +1,6 @@
 import { PaginationParams } from "@/core/repository/pagination-params";
-import { AnswerAttachmentsRepos } from "@/domain/forum/aplication/respository/answer-attachment-repository";
-import { AnswerRepos } from "@/domain/forum/aplication/respository/answer-repository";
+import { AnswerAttachmentsRepos } from "@/domain/forum/application/respository/answer-attachment-repository";
+import { AnswerRepos } from "@/domain/forum/application/respository/answer-repository";
 import { Answer } from "@/domain/forum/enterprise/entities/answer";
 
 export class InMemoryAnswerRepos implements AnswerRepos{

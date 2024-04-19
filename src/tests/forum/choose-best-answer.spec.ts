@@ -1,17 +1,17 @@
-import { InMemoryQuestionRepos } from '@/config-tests/InMemory-Repository/question-repos';
-import { InMemoryAnswerAttachmentsRepos } from '@/config-tests/InMemory-Repository/answer-attachment-repos';
-import { InMemoryQuestionAttachmentsRepos } from '@/config-tests/InMemory-Repository/question-attachment-repos';
-import { InMemoryAnswerRepos } from '@/config-tests/InMemory-Repository/answer-repos';
+import { InMemoryQuestionRepos } from '@/config-tests/InMemory-Repository/forum/question-repos';
+import { InMemoryAnswerAttachmentsRepos } from '@/config-tests/InMemory-Repository/forum/answer-attachment-repos';
+import { InMemoryQuestionAttachmentsRepos } from '@/config-tests/InMemory-Repository/forum/question-attachment-repos';
+import { InMemoryAnswerRepos } from '@/config-tests/InMemory-Repository/forum/answer-repos';
 
 import { makeAnswer } from '@/config-tests/factories/make-answer';
 
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 
-import { ChooseBestAnswerUseCase } from '@/domain/forum/aplication/use-cases/choose-best-answer';
+import { ChooseBestAnswerUseCase } from '@/domain/forum/application/use-cases/choose-best-answer';
 
 import { makeQuestion } from '@/config-tests/factories/make-question';
 
-import { NotAllowedError } from '@/domain/forum/aplication/use-cases/errors/not-allowed-error';
+import { NotAllowedError } from '@/domain/forum/application/use-cases/errors/not-allowed-error';
 
 
 let inMemoryAnswerAttachmentsRepository: InMemoryAnswerAttachmentsRepos

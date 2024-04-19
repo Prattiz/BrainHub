@@ -1,4 +1,4 @@
-import { QuestionAttachmentsRepos } from "@/domain/forum/aplication/respository/question-attachment-repository";
+import { QuestionAttachmentsRepos } from "@/domain/forum/application/respository/question-attachment-repository";
 import { QuestionAttachment } from '@/domain/forum/enterprise/entities/question-attachment';
 
 

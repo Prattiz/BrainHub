@@ -1,6 +1,6 @@
 import { PaginationParams } from "@/core/repository/pagination-params";
-import { QuestionAttachmentsRepos } from "@/domain/forum/aplication/respository/question-attachment-repository";
-import { QuestionRepos } from "@/domain/forum/aplication/respository/question-repository";
+import { QuestionAttachmentsRepos } from "@/domain/forum/application/respository/question-attachment-repository";
+import { QuestionRepos } from "@/domain/forum/application/respository/question-repository";
 import { Question } from "@/domain/forum/enterprise/entities/question";
 
 export class InMemoryQuestionRepos implements QuestionRepos {
