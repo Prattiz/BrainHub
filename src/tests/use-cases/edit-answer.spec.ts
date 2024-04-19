@@ -8,16 +8,26 @@ import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 
 
 import { NotAllowedError } from '@/domain/forum/aplication/use-cases/errors/not-allowed-error';
+import { InMemoryAnswerAttachmentsRepos } from '@/config-tests/InMemory-Repository/answer-attachment-repos';
+import { makeAnswerAttachment } from '@/config-tests/factories/make-answer-attachment';
 
 
 let inMemoryAnswersRepository: InMemoryAnswerRepos
+let inMemoryAnswerAttachmentsRepository: InMemoryAnswerAttachmentsRepos
 let sut: EditAnswerUseCase
 
 describe('Edit Answer', () => {
 
     beforeEach(() => {
-        inMemoryAnswersRepository = new InMemoryAnswerRepos()
-        sut = new EditAnswerUseCase(inMemoryAnswersRepository)
+
+        inMemoryAnswerAttachmentsRepository = new InMemoryAnswerAttachmentsRepos()
+        inMemoryAnswersRepository = new InMemoryAnswerRepos( inMemoryAnswerAttachmentsRepository)
+
+        sut = new EditAnswerUseCase(
+            inMemoryAnswersRepository,
+            inMemoryAnswerAttachmentsRepository,
+        )
+
     });
 
     it('should be able to edit a answer', async () => {
@@ -31,11 +41,23 @@ describe('Edit Answer', () => {
 
         await inMemoryAnswersRepository.create(newAnswer)
 
+        inMemoryAnswerAttachmentsRepository.items.push(
+            makeAnswerAttachment({
+              answerId: newAnswer.ID,
+              attachmentId: new UniqueEntityID('1'),
+            }),
+            makeAnswerAttachment({
+              answerId: newAnswer.ID,
+              attachmentId: new UniqueEntityID('2'),
+            }),
+          )
+
         await sut.execute({
 
             answerId: newAnswer.ID.toValue(),
             authorId: 'author-1',
             content: 'content test',
+            attachmentsIds: []
         })
 
         expect(inMemoryAnswersRepository.items[0]).toMatchObject({ content: 'content test' })
@@ -56,7 +78,8 @@ describe('Edit Answer', () => {
         const result = await sut.execute({
             answerId: newAnswer.ID.toValue(),
             authorId: 'author-2', 
-            content: 'trying to edit...'
+            content: 'trying to edit...',
+            attachmentsIds: []
         });
 
         expect(result.isLeft()).toBe(true)

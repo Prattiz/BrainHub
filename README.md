@@ -16,27 +16,26 @@
 
 ##
 
-## RFs (Requisitos funcionais) ---> ✅
+## Functional Requirements (FRs) ---> ✅
 
- - [X] Deve ser possível se criar questão
- - [X] Deve ser possível se responder questão
- - [X] Deve ser possível responder a questão
- - [X] Deve ser possível responder a resposta da questão
- - [X] Deve ser possível ver todas as respostas da questão
- - [X] Deve ser possível procurar uma questão
- - [X] Deve ser possível procurar as respostas da questão
- - [X] Deve ser possível procurar as questões mais recentes 
- - [X] Deve ser possivel editar a questão
- - [X] Deve ser possivel editar a resposta
- - [X] O autor da questão deve conseguir marcar alguma resposta como melhor resposta 
- - [X] O autor da questão deve conseguir deletar as suas questões
- - [X] O autor da resposta deve conseguir deletar a sua resposta
- 
+- [X] It must be possible to create a question.
+- [X] It must be possible to answer a question.
+- [X] It must be possible to respond to a question.
+- [X] It must be possible to respond to the response of a question.
+- [X] It must be possible to view all responses to a question.
+- [X] It must be possible to search for a question.
+- [X] It must be possible to search for the responses to a question.
+- [X] It must be possible to search for the most recent questions.
+- [X] It must be possible to edit the question.
+- [X] It must be possible to edit the response.
+- [X] The question author must be able to mark some response as the best response.
+- [X] The question author must be able to delete their questions.
+- [X] The response author must be able to delete their response.
 
-## RNs (Regras de negócio) ---> ✅
+## Business Rules (BRs) ---> ✅
 
+## Non-Functional Requirements (NFRs) ---> ✅
 
-## RNFs (Requisitos não-funcionais) ---> ✅
 
 
  

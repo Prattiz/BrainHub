@@ -1,6 +1,7 @@
 import { Entity } from "@/core/entities/entity";
 import { Optional } from "@/core/entities/optional";
 import { UniqueEntityID } from "@/core/entities/unique-entity-id";
+import { AnswerAttachmentList } from "./answer-attachment-list";
 
 
 export interface AnswerProps {
@@ -8,6 +9,7 @@ export interface AnswerProps {
     content: string,
     authorId: UniqueEntityID,
     questionId: UniqueEntityID,
+    attachments: AnswerAttachmentList
     createdAt: Date,
     updatedAt?: Date,
 
@@ -15,25 +17,18 @@ export interface AnswerProps {
 
 export class Answer extends Entity<AnswerProps>{
 
-    get authorId() {
-        return this.props.authorId
-      }
+    get authorId() { return this.props.authorId }
     
-      get questionId() {
-        return this.props.questionId
-      }
+      get questionId() { return this.props.questionId }
     
-      get content() {
-        return this.props.content
-      }
+      get content() { return this.props.content }
+      
+      get attachment(){ return this.props.attachments }
     
-      get createdAt() {
-        return this.props.createdAt
-      }
+      get createdAt() { return this.props.createdAt }
     
-      get updatedAt() {
-        return this.props.updatedAt
-      }
+      get updatedAt() { return this.props.updatedAt }
+
     
       get excerpt() {
         return this.content
@@ -45,16 +40,26 @@ export class Answer extends Entity<AnswerProps>{
       private touch() {
         this.props.updatedAt = new Date()
       }
+
     
       set content(content: string) {
         this.props.content = content
         this.touch()
       }
 
-    static create( props: Optional<AnswerProps, 'createdAt'>, id?: UniqueEntityID) {
+      set attachments(attachments: AnswerAttachmentList) {
+
+        this.props.attachments = attachments
+        
+        this.touch()
+      }
+
+
+    static create( props: Optional<AnswerProps, 'createdAt' | 'attachments'>, id?: UniqueEntityID) {
 
         const answer = new Answer({
           ...props,
+          attachments: props.attachments ?? new AnswerAttachmentList,
           createdAt: props.createdAt ?? new Date(),
         }, id)
     

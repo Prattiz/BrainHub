@@ -5,21 +5,22 @@ import { makeQuestion } from '@/config-tests/factories/make-question';
 
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 
-import { InMemoryQuestionAttachmentsRepository } from '@/config-tests/InMemory-Repository/question-attachment-repos';
+import { InMemoryQuestionAttachmentsRepos } from '@/config-tests/InMemory-Repository/question-attachment-repos';
 
 import { NotAllowedError } from '@/domain/forum/aplication/use-cases/errors/not-allowed-error';
 import { makeQuestionAttachment } from '@/config-tests/factories/make-question-attachment';
 
 
 let inMemoryQuestionsRepository: InMemoryQuestionRepos
-let inMemoryQuestionAttachmentsRepository: InMemoryQuestionAttachmentsRepository
+let inMemoryQuestionAttachmentsRepository: InMemoryQuestionAttachmentsRepos
 let sut: EditQuestionUseCase
 
 describe('Edit Question', () => {
 
     beforeEach(() => {
-        inMemoryQuestionsRepository = new InMemoryQuestionRepos()
-        inMemoryQuestionAttachmentsRepository = new InMemoryQuestionAttachmentsRepository()
+        
+        inMemoryQuestionsRepository = new InMemoryQuestionRepos(inMemoryQuestionAttachmentsRepository)
+        inMemoryQuestionAttachmentsRepository = new InMemoryQuestionAttachmentsRepos()
 
         sut = new EditQuestionUseCase(
             inMemoryQuestionsRepository,

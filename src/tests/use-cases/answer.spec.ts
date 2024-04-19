@@ -1,16 +1,19 @@
 import { AnswerQuestionUseCase } from '@/domain/forum/aplication/use-cases/answer-question';
 import { InMemoryAnswerRepos } from '@/config-tests/InMemory-Repository/answer-repos';
+import { InMemoryAnswerAttachmentsRepos } from '@/config-tests/InMemory-Repository/answer-attachment-repos';
 
 
-
-let inMemoryAnswerRepos: InMemoryAnswerRepos;
+let inMemoryAnswersRepository: InMemoryAnswerRepos;
+let inMemoryAnswerAttachmentsRepository: InMemoryAnswerAttachmentsRepos
 let sut: AnswerQuestionUseCase
 
 describe('create a answer', async () => {
 
   beforeEach(() => {
-    inMemoryAnswerRepos = new InMemoryAnswerRepos();
-    sut = new AnswerQuestionUseCase(inMemoryAnswerRepos)
+    
+    inMemoryAnswerAttachmentsRepository = new InMemoryAnswerAttachmentsRepos()
+    inMemoryAnswersRepository = new InMemoryAnswerRepos( inMemoryAnswerAttachmentsRepository)
+    sut = new AnswerQuestionUseCase(inMemoryAnswersRepository)
 
   });
 
@@ -22,6 +25,7 @@ describe('create a answer', async () => {
       instructorId: '1',
       questionId: '1',
       content: 'the answer',
+      attachmentsIds: []
     });
 
     expect(answer.value?.answer.content).toEqual("the answer")

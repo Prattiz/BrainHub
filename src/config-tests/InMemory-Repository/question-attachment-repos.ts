@@ -2,7 +2,7 @@ import { QuestionAttachmentsRepos } from "@/domain/forum/aplication/respository/
 import { QuestionAttachment } from '@/domain/forum/enterprise/entities/question-attachment';
 
 
-export class InMemoryQuestionAttachmentsRepository implements QuestionAttachmentsRepos{
+export class InMemoryQuestionAttachmentsRepos implements QuestionAttachmentsRepos{
 
   public items: QuestionAttachment[] = []
 
@@ -11,5 +11,14 @@ export class InMemoryQuestionAttachmentsRepository implements QuestionAttachment
     const questionAttachments = this.items.filter((item) => item.questionId.toString() === questionId);
 
     return questionAttachments
+  }
+
+  async deleteManyByQuestionId(questionId: string) {
+
+    const questionAttachments = this.items.filter(
+      (item) => item.questionId.toString() !== questionId,
+    )
+
+    this.items = questionAttachments
   }
 }
