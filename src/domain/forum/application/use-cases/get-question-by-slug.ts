@@ -1,4 +1,4 @@
-import { Either, left, right } from "@/core/either";
+import { Either, left, right } from "@/core/utils/either";
 import { Question } from "../../enterprise/entities/question";
 import { QuestionRepos } from "../respository/question-repository";
 import { ResourceNotFoundError } from "./errors/resource-not-found-error";

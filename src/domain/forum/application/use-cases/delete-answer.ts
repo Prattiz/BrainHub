@@ -1,4 +1,4 @@
-import { left, right, Either } from "@/core/either";
+import { left, right, Either } from "@/core/utils/either";
 import { AnswerRepos } from "../respository/answer-repository"
 import { ResourceNotFoundError } from "./errors/resource-not-found-error";
 import { NotAllowedError } from "./errors/not-allowed-error";

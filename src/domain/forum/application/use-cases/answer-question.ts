@@ -1,7 +1,7 @@
 import { UniqueEntityID } from "@/core/entities/unique-entity-id";
 import { Answer } from "../../enterprise/entities/answer";
 import { AnswerRepos } from "../respository/answer-repository";
-import { Either, right } from "@/core/either";
+import { Either, right } from "@/core/utils/either";
 import { AnswerAttachment } from "../../enterprise/entities/answer-attachment";
 import { AnswerAttachmentList } from "../../enterprise/entities/answer-attachment-list";
 

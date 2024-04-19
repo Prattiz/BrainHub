@@ -1,6 +1,6 @@
 import { QuestionCommentsRepos } from "../respository/questionComment-repository";
 
-import { Either, left, right } from "@/core/either";
+import { Either, left, right } from "@/core/utils/either";
 import { NotAllowedError } from "./errors/not-allowed-error";
 import { ResourceNotFoundError } from "./errors/resource-not-found-error";
 

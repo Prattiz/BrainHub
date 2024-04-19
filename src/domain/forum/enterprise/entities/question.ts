@@ -3,7 +3,7 @@ import { QuestionAttachment } from "./question-attachment";
 
 import { AggregateRoot } from "@/core/entities/agregate-root";
 import { UniqueEntityID } from "@/core/entities/unique-entity-id";
-import { Optional } from "@/core/entities/optional";
+import { Optional } from "@/core/types/optional";
 
 import dayjs from "dayjs";
 import { QuestionAttachmentList } from "./question-attachment-list";

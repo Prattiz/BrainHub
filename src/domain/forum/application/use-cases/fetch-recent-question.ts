@@ -1,6 +1,6 @@
 import { Question } from '@/domain/forum/enterprise/entities/question'
 import { QuestionRepos } from '../respository/question-repository'
-import { Either, right } from '@/core/either';
+import { Either, right } from '@/core/utils/either';
 
 
 interface FetchRecentQuestionsUseCaseRequest {

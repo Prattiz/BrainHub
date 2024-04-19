@@ -2,7 +2,7 @@ import { AnswerRepos } from "../respository/answer-repository";
 
 import { Question } from "../../enterprise/entities/question";
 import { QuestionRepos } from "../respository/question-repository";
-import { Either, left, right } from "@/core/either";
+import { Either, left, right } from "@/core/utils/either";
 import { ResourceNotFoundError } from "./errors/resource-not-found-error";
 import { NotAllowedError } from "./errors/not-allowed-error";
 
