@@ -1,8 +1,8 @@
-import { InMemoryQuestionRepos } from '@/config-tests/InMemory-Repository/forum/question-repos';
-import { makeQuestion } from '@/config-tests/factories/forum/make-question';
-import { InMemoryQuestionCommentsRepos } from '@/config-tests/InMemory-Repository/forum/questionComment-repos';
+import { InMemoryQuestionRepos } from '@/tests/config-tests/InMemory-Repository/forum/question-repos';
+import { makeQuestion } from '@/tests/config-tests/factories/forum/make-question';
+import { InMemoryQuestionCommentsRepos } from '@/tests/config-tests/InMemory-Repository/forum/questionComment-repos';
 import { CommentOnQuestionUseCase } from '@/domain/forum/application/use-cases/comment-on-question';
-import { InMemoryQuestionAttachmentsRepos } from '@/config-tests/InMemory-Repository/forum/question-attachment-repos';
+import { InMemoryQuestionAttachmentsRepos } from '@/tests/config-tests/InMemory-Repository/forum/question-attachment-repos';
 
 
 

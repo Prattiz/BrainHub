@@ -1,4 +1,4 @@
-import { InMemoryNotificationsRepos } from "@/config-tests/InMemory-Repository/notification/send-notification-repos"
+import { InMemoryNotificationsRepos } from "@/tests/config-tests/InMemory-Repository/notification/send-notification-repos"
 import { SendNotificationUseCase } from "@/domain/notification/application/use-cases/send-notification"
 
 let inMemoryNotificationsRepository: InMemoryNotificationsRepos

@@ -1,14 +1,10 @@
-import { InMemoryAnswerRepos } from '@/config-tests/InMemory-Repository/forum/answer-repos';
-import { InMemoryAnswerCommentsRepos } from '@/config-tests/InMemory-Repository/forum/answerComment-repos';
+import { InMemoryAnswerRepos } from '@/tests/config-tests/InMemory-Repository/forum/answer-repos';
+import { InMemoryAnswerCommentsRepos } from '@/tests/config-tests/InMemory-Repository/forum/answerComment-repos';
 
 import { CommentOnAnswerUseCase } from '@/domain/forum/application/use-cases/comment-on-answer';
 
-import { makeAnswer } from '@/config-tests/factories/forum/make-answer';
-import { InMemoryAnswerAttachmentsRepos } from '@/config-tests/InMemory-Repository/forum/answer-attachment-repos';
-
-
-
-
+import { makeAnswer } from '@/tests/config-tests/factories/forum/make-answer';
+import { InMemoryAnswerAttachmentsRepos } from '@/tests/config-tests/InMemory-Repository/forum/answer-attachment-repos';
 
 
 let inMemoryAnswersRepository: InMemoryAnswerRepos

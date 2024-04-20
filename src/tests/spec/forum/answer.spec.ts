@@ -1,6 +1,6 @@
 import { AnswerQuestionUseCase } from '@/domain/forum/application/use-cases/answer-question';
-import { InMemoryAnswerRepos } from '@/config-tests/InMemory-Repository/forum/answer-repos';
-import { InMemoryAnswerAttachmentsRepos } from '@/config-tests/InMemory-Repository/forum/answer-attachment-repos';
+import { InMemoryAnswerRepos } from '@/tests/config-tests/InMemory-Repository/forum/answer-repos';
+import { InMemoryAnswerAttachmentsRepos } from '@/tests/config-tests/InMemory-Repository/forum/answer-attachment-repos';
 
 
 let inMemoryAnswersRepository: InMemoryAnswerRepos;

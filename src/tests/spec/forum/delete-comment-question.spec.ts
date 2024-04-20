@@ -1,8 +1,8 @@
-import { InMemoryQuestionCommentsRepos } from '@/config-tests/InMemory-Repository/forum/questionComment-repos';
+import { InMemoryQuestionCommentsRepos } from '@/tests/config-tests/InMemory-Repository/forum/questionComment-repos';
 
 import { DeleteQuestionCommentUseCase } from '@/domain/forum/application/use-cases/delete-comment-question';
 
-import { makeQuestionComment } from '@/config-tests/factories/forum/make-comment-question';
+import { makeQuestionComment } from '@/tests/config-tests/factories/forum/make-comment-question';
 
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 

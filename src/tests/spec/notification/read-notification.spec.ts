@@ -1,6 +1,6 @@
-import { InMemoryNotificationsRepos } from '@/config-tests/InMemory-Repository/notification/send-notification-repos';
+import { InMemoryNotificationsRepos } from '@/tests/config-tests/InMemory-Repository/notification/send-notification-repos';
 import { ReadNotificationUseCase } from '@/domain/notification/application/use-cases/read-notification';
-import { makeNotification } from '@/config-tests/factories/notifications/make-notifications';
+import { makeNotification } from '@/tests/config-tests/factories/notifications/make-notifications';
 import { UniqueEntityID } from '@/core/entities/unique-entity-id' ;
 import { NotAllowedError } from '@/core/errors/not-allowed-error' ;
 

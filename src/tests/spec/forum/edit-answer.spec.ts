@@ -1,15 +1,15 @@
 import { EditAnswerUseCase } from '@/domain/forum/application/use-cases/edit-answer';
 
-import { InMemoryAnswerRepos } from '@/config-tests/InMemory-Repository/forum/answer-repos';
-import { makeAnswer } from '@/config-tests/factories/forum/make-answer';
+import { InMemoryAnswerRepos } from '@/tests/config-tests/InMemory-Repository/forum/answer-repos';
+import { makeAnswer } from '@/tests/config-tests/factories/forum/make-answer';
 
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 
 
 
 import { NotAllowedError } from '@/core/errors/not-allowed-error';
-import { InMemoryAnswerAttachmentsRepos } from '@/config-tests/InMemory-Repository/forum/answer-attachment-repos';
-import { makeAnswerAttachment } from '@/config-tests/factories/forum/make-answer-attachment';
+import { InMemoryAnswerAttachmentsRepos } from '@/tests/config-tests/InMemory-Repository/forum/answer-attachment-repos';
+import { makeAnswerAttachment } from '@/tests/config-tests/factories/forum/make-answer-attachment';
 
 
 let inMemoryAnswersRepository: InMemoryAnswerRepos

@@ -2,7 +2,7 @@
 
 ## Technologies -->
 
-- Node.js [ TypeSript ]
+- Node.js [ TypeScript ]
 - Vitest [ Unit-Tests ]
 
 ## Technical abilities -->
