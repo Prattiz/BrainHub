@@ -1,12 +1,12 @@
 import { DeleteQuestionUseCase } from '@/domain/forum/application/use-cases/delete-question'
 import { InMemoryQuestionRepos } from '@/config-tests/InMemory-Repository/forum/question-repos'
-import { makeQuestion } from '@/config-tests/factories/make-question'
+import { makeQuestion } from '@/config-tests/factories/forum/make-question'
 import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 
 
-import { NotAllowedError } from '@/domain/forum/application/use-cases/errors/not-allowed-error';
+import { NotAllowedError } from '@/core/errors/not-allowed-error';
 import { InMemoryQuestionAttachmentsRepos } from '@/config-tests/InMemory-Repository/forum/question-attachment-repos';
-import { makeQuestionAttachment } from '@/config-tests/factories/make-question-attachment';
+import { makeQuestionAttachment } from '@/config-tests/factories/forum/make-question-attachment';
 
 
 let inMemoryQuestionsRepository: InMemoryQuestionRepos

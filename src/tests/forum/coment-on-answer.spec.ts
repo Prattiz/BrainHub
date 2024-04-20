@@ -3,7 +3,7 @@ import { InMemoryAnswerCommentsRepos } from '@/config-tests/InMemory-Repository/
 
 import { CommentOnAnswerUseCase } from '@/domain/forum/application/use-cases/comment-on-answer';
 
-import { makeAnswer } from '@/config-tests/factories/make-answer';
+import { makeAnswer } from '@/config-tests/factories/forum/make-answer';
 import { InMemoryAnswerAttachmentsRepos } from '@/config-tests/InMemory-Repository/forum/answer-attachment-repos';
 
 

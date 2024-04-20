@@ -1,5 +1,5 @@
 import { InMemoryQuestionRepos } from '@/config-tests/InMemory-Repository/forum/question-repos';
-import { makeQuestion } from '@/config-tests/factories/make-question';
+import { makeQuestion } from '@/config-tests/factories/forum/make-question';
 import { InMemoryQuestionCommentsRepos } from '@/config-tests/InMemory-Repository/forum/questionComment-repos';
 import { CommentOnQuestionUseCase } from '@/domain/forum/application/use-cases/comment-on-question';
 import { InMemoryQuestionAttachmentsRepos } from '@/config-tests/InMemory-Repository/forum/question-attachment-repos';

@@ -3,7 +3,7 @@ import { QuestionRepos } from "../respository/question-repository";
 import { QuestionCommentsRepos } from "../respository/questionComment-repository";
 
 import { UniqueEntityID } from "@/core/entities/unique-entity-id";
-import { ResourceNotFoundError } from "./errors/resource-not-found-error";
+import { ResourceNotFoundError } from "../../../../core/errors/resource-not-found-error";
 import { Either, left, right } from "@/core/utils/either";
 
 

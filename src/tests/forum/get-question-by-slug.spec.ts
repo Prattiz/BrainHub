@@ -1,6 +1,6 @@
 import { InMemoryQuestionAttachmentsRepos } from '@/config-tests/InMemory-Repository/forum/question-attachment-repos';
 import { InMemoryQuestionRepos } from '@/config-tests/InMemory-Repository/forum/question-repos';
-import { makeQuestion } from '@/config-tests/factories/make-question';
+import { makeQuestion } from '@/config-tests/factories/forum/make-question';
 import { GetQuestionBySlugUseCase } from '@/domain/forum/application/use-cases/get-question-by-slug';
 import { Slug } from '@/domain/forum/enterprise/entities/value-objects/slug';
 

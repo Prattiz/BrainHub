@@ -1,7 +1,7 @@
 import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 import { InMemoryQuestionCommentsRepos } from '@/config-tests/InMemory-Repository/forum/questionComment-repos'
 import { FetchQuestionCommentsUseCase } from '@/domain/forum/application/use-cases/fetch-comments-questions'
-import { makeQuestionComment } from '@/config-tests/factories/make-comment-question'
+import { makeQuestionComment } from '@/config-tests/factories/forum/make-comment-question'
 
 
 

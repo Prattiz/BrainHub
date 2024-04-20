@@ -1,10 +1,10 @@
 import { DeleteAnswerUseCase } from '@/domain/forum/application/use-cases/delete-answer'
 import { InMemoryAnswerRepos } from '@/config-tests/InMemory-Repository/forum/answer-repos'
-import { makeAnswer } from '@/config-tests/factories/make-answer'
+import { makeAnswer } from '@/config-tests/factories/forum/make-answer'
 import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 
 
-import { NotAllowedError } from '@/domain/forum/application/use-cases/errors/not-allowed-error';
+import { NotAllowedError } from '@/core/errors/not-allowed-error';
 import { InMemoryAnswerAttachmentsRepos } from '@/config-tests/InMemory-Repository/forum/answer-attachment-repos';
 
 

@@ -2,13 +2,13 @@ import { InMemoryQuestionCommentsRepos } from '@/config-tests/InMemory-Repositor
 
 import { DeleteQuestionCommentUseCase } from '@/domain/forum/application/use-cases/delete-comment-question';
 
-import { makeQuestionComment } from '@/config-tests/factories/make-comment-question';
+import { makeQuestionComment } from '@/config-tests/factories/forum/make-comment-question';
 
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 
 
 
-import { NotAllowedError } from '@/domain/forum/application/use-cases/errors/not-allowed-error';
+import { NotAllowedError } from '@/core/errors/not-allowed-error';
 
 
 let inMemoryQuestionCommentsRepository: InMemoryQuestionCommentsRepos

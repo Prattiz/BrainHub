@@ -24,8 +24,8 @@ export class AnswerComment extends Comment<AnswerCommentProps> {
     id?: UniqueEntityID,
   ) {
     
-    const answerComment = new AnswerComment(
-      {
+    const answerComment = new AnswerComment({
+      
         ...props,
         createdAt: props.createdAt ?? new Date(),
       },

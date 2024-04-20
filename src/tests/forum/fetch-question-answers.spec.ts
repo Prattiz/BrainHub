@@ -1,6 +1,6 @@
 import { InMemoryAnswerRepos } from '@/config-tests/InMemory-Repository/forum/answer-repos';
 import { FetchQuestionAnswersUseCase } from '@/domain/forum/application/use-cases/fetch-question-answers';
-import { makeAnswer } from '@/config-tests/factories/make-answer';
+import { makeAnswer } from '@/config-tests/factories/forum/make-answer';
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 import { InMemoryAnswerAttachmentsRepos } from '@/config-tests/InMemory-Repository/forum/answer-attachment-repos';
 
