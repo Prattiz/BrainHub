@@ -7,12 +7,14 @@
 
 ## Technical abilities -->
 
--  Clean Architecture
+- Clean Architecture
 - Tests
 - DDD
 - Error Handling
 - WatchedList
 - Aggregates
+- Sub-Domains
+- Pub/Sub
 
 ##
 
