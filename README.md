@@ -32,8 +32,8 @@
 - [X] It must be possible to edit the question.
 - [X] It must be possible to edit the response.
 - [X] The question author must be able to mark some response as the best response.
-- [] It must be possible to receive a notification.
-- [] It must be possible to read the notification.
+- [X] It must be possible to receive a notification when someone answer your question.
+- [X] It must be possible to read the notification.
 
 ## Business Rules (BRs) ---> ✅
 

@@ -5,7 +5,7 @@ import { Notification } from '@/domain/notification/enterprices/entities/notific
 import { NotificationsRepos } from '@/domain/notification/application/repository/notification-repository';
 
 
-interface SendNotificationUseCaseRequest {
+export interface SendNotificationUseCaseRequest {
 
   recipientId: string
   title: string
@@ -13,7 +13,7 @@ interface SendNotificationUseCaseRequest {
 }
 
 
-type SendNotificationUseCaseResponse = Either< null, { notification: Notification } >
+export type SendNotificationUseCaseResponse = Either< null, { notification: Notification } >
 
 export class SendNotificationUseCase {
 
