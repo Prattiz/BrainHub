@@ -16,9 +16,10 @@ export class InMemoryNotificationsRepos implements NotificationsRepos{
     return notification
   }
 
-    async save(notification: Notification) {
+  async save(notification: Notification) {
+
       const itemIndex = this.items.findIndex(
-        (item) => item.ID === notification.ID,
+        (item) => item.ID === notification.ID
       )
 
     this.items[itemIndex] = notification
