@@ -34,6 +34,7 @@
 - [X] The question author must be able to mark some response as the best response.
 - [X] It must be possible to receive a notification when someone answer your question.
 - [X] It must be possible to read the notification.
+- [X] It must be possible to receive a notification when the author chose your answer to be the best answer
 
 ## Business Rules (BRs) ---> ✅
 

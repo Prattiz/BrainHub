@@ -1,6 +1,9 @@
+import { DomainEvents } from "@/core/events/domain-events";
 import { PaginationParams } from "@/core/repository/pagination-params";
+
 import { AnswerAttachmentsRepos } from "@/domain/forum/application/respository/answer-attachment-repository";
 import { AnswerRepos } from "@/domain/forum/application/respository/answer-repository";
+
 import { Answer } from "@/domain/forum/enterprise/entities/answer";
 
 export class InMemoryAnswerRepos implements AnswerRepos{
@@ -44,12 +47,14 @@ export class InMemoryAnswerRepos implements AnswerRepos{
         this.items[itemIndex] = answer
 
         this.answerAttachmentsRepository.deleteManyByAnswerId(answer.ID.toString())
+        DomainEvents.dispatchEventsForAggregate(answer.ID) 
     }
 
 
     async create(answer: Answer) {
         
         this.items.push(answer)
+        DomainEvents.dispatchEventsForAggregate(answer.ID) 
     }
     
 }
